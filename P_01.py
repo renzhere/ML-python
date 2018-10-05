@@ -16,6 +16,13 @@ vocab.update(words_pos)
 vocab.update(words_neg)
 print(len(vocab))
 
+posDict = dict.fromkeys(vocab, 0)
+negDict = dict.fromkeys(vocab, 0)
+
+for words in vocab:
+    posDict.update(vocab=words)
+    negDict.update(vocab=words)
+
 
 
 
