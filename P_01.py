@@ -22,14 +22,23 @@ negDict = dict.fromkeys(vocab, 0)
 for words in vocab:
     posDict.update(vocab=words)
     negDict.update(vocab=words)
-
-    count = 0
+    
+count_p = 0
+count_n = 0
+i = 0
+j = 0
 for item in dict.keys(posDict):
-    for word in words_pos_list:
-        if item == word:
-            count += 1
-print(word, count)
+    if item == words_pos_list[i]:
+        count_p += 1
+        i += 1
+    print(item, count_p)
 
+
+for item in dict.keys(posDict):
+    if item == words_neg_list[j]:
+        count_n += 1
+        j += 1
+    print(item, count_n)
 
 
 
