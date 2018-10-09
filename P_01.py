@@ -23,6 +23,12 @@ for words in vocab:
     posDict.update(vocab=words)
     negDict.update(vocab=words)
 
+    count = 0
+for item in dict.keys(posDict):
+    for word in words_pos_list:
+        if item == word:
+            count += 1
+print(word, count)
 
 
 
