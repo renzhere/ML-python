@@ -7,13 +7,13 @@ data_pos = dataFile_pos.read()
 data_neg = dataFile_neg.read()
 print(len(data_pos))
 
-words_pos = data_pos.split()
-words_neg = data_neg.split()
+words_pos_list = data_pos.split()
+words_neg_list = data_neg.split()
 print(len(words_pos))
 
 vocab = set()
-vocab.update(words_pos)
-vocab.update(words_neg)
+vocab.update(words_pos_list)
+vocab.update(words_neg_list)
 print(len(vocab))
 
 posDict = dict.fromkeys(vocab, 0)
@@ -34,7 +34,7 @@ for item in dict.keys(posDict):
     print(item, count_p)
 
 
-for item in dict.keys(posDict):
+for item in dict.keys(negDict):
     if item == words_neg_list[j]:
         count_n += 1
         j += 1
